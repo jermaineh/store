@@ -1,0 +1,1 @@
+This is a React based e-commerce store with ability to add to a cart and check out and pay with paypal and other payment methods
