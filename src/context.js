@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { storeProducts, detailProduct } from './data';
+import {storeProducts, detailProduct} from './data';
 
 const ProductContext = React.createContext();
 //needs a Provider that supplies the information
@@ -8,27 +8,27 @@ const ProductContext = React.createContext();
 
 
 class ProductProvider extends Component {
-    state = {
+    state= {
         products: storeProducts,
         detailProduct: detailProduct
     }
-
-    handleDetail = () => {
+    
+    handleDetail = ()=> {
         console.log("hello from detail");
-
+    
     }
 
-    addToCart = () => {
+    addToCart = ()=> {
         console.log('hello from cart')
     }
     render() {
-        return ( <
-            ProductContext.Provider value = {
-                {...this.state, handleDetail: this.handleDetail, addToCart: this.addToCart } } > { this.props.children } <
-            /ProductContext.Provider>
+        return (
+            <ProductContext.Provider value={{...this.state, handleDetail: this.handleDetail, addToCart: this.addToCart}}>
+                {this.props.children}
+            </ProductContext.Provider>
         );
     }
 }
-const ProductConsumer = ProductContext.Consumer;
+const  ProductConsumer = ProductContext.Consumer;
 
 export { ProductConsumer, ProductProvider };
