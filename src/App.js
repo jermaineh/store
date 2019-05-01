@@ -8,6 +8,7 @@ import Details from './components/Details';
 import Cart from './components/Cart';
 import Default from './components/Default';
 import Product from './components/Product';
+import Modal from './components/Modal';
 
 //this page is solely for rendering the different components there will be no logic here, routing is handled by react-router-dom, which the parent is in index.js
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path='/store'component={Product}></Route>
           <Route component={Default}></Route>
         </Switch>
+        <Modal />
     </React.Fragment>
   );
 }
